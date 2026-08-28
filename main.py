@@ -1,5 +1,4 @@
-from games import show_games
-
+from games import *
 
 games = [
    {
@@ -20,4 +19,15 @@ games = [
 ]
 
 show_games(games)
+
+genre = input("Введите жанр для поиска: ").strip()
+
+filtered_games = filter_by_genre(games, genre)
+
+print()
+
+if filtered_games:
+    show_games(filtered_games)
+else:
+    print("Игры такого жанра не найдены.")
 
